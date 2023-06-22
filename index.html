@@ -32,9 +32,19 @@
 <body>
     <h1>Это будет типа интернет-магазин</h1>
     <img src="myimg.png" alt="" width="300" height="300">
-    <p>Как у тебя дела</p>
     <button id="buy">Купить</button>
+    <form id="form">
+        <input type="text" placeholder="Name" id="user_name">
+        <input type="text" placeholder="Email" id="user_email">
+        <input type="text" placeholder="Phone" id="user_phone">
+        <button id="order">Оформить</button>
+    </form>
+    <p>Как у тебя дела</p>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        let tg = window.Telegram.WebApp;
+        let but = document.getElementById("buy")
+    </script>
 </body>
 
 </html>

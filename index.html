@@ -27,12 +27,18 @@
         button:hover{
             background: var(--tg-theme-secondary-bg-color);
         }
+        #form{
+            display: none;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
+    <div id="main">
     <h1>Это будет типа интернет-магазин</h1>
     <img src="myimg.png" alt="" width="300" height="300">
     <button id="buy">Купить</button>
+    </div>
     <form id="form">
         <input type="text" placeholder="Name" id="user_name">
         <input type="text" placeholder="Email" id="user_email">
@@ -44,7 +50,20 @@
     <script>
         let tg = window.Telegram.WebApp;
         let but = document.getElementById("buy")
+        let order = document.getElementById("order")
+        
+        buy.addEventListener("click", ()=>{
+            document.getElementById("main").style.display = "none";
+            document.getElementById("form").style.display = "block";
+            document.getElementById("user_name").value = tg.initDataUnsafe.user.first_name + " " + tg.initDataUnsafe.last_name;
+        });
+
+        order.addEventListener("click", ()=> {
+            tg.close();
+        })
     </script>
+
+
 </body>
 
 </html>
